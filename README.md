@@ -9,3 +9,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Listado de indicadores
 
 Depliega el valor de 12 Indicadores.
+
+![alt imagen-referencia](http://github.com/cindylopez1814/indicadoresFinancieros/blob/develop/src/assets/img/img-ref.png)
