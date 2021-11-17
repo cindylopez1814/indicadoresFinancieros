@@ -1,0 +1,53 @@
+.lista_contenedor {
+  .lista_contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+
+    &[aria-expanded="true"] {
+      transition: linear 0.1s;
+      padding: 1rem 0 !important;
+    }
+
+    .lista_contenido_valores {
+      line-height: normal;
+      span {
+        font-size: 12px !important;
+      }
+    }
+
+    .lista_contenido_mas {
+      display: flex;
+      justify-content: center;
+
+      div {      
+        text-align: center;
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);;
+        }
+
+      }
+    }
+  }
+
+  .lista_contenido_colapsable {
+    transition: all 0.2s linear;
+    display: none;
+    &.show {
+    display: flex;
+    }
+
+    .lista_contenido_deplegado {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+    }
+
+  }
+}

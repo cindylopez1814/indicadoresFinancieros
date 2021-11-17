@@ -1,0 +1,35 @@
+<section class="lista_contenedor container-fluid my-5">
+
+  <div class="accordion container mb-2" id="accordionExample" *ngFor="let item of config | keyvalue; let i = index">
+    <div class="card p-2" *ngIf="item.value.nombre">
+      <div class="card-header bg-white lista_contenido p-0 row" id="headingOne" data-toggle="collapse"
+        attr.data-target="#collapse_{{i}}" aria-expanded="false" aria-controls="collapseOne">
+        <h3 class="btn collapsed col-md-6 text-left pl-4">
+          {{ item.value.nombre }}
+        </h3>
+        <div class="lista_contenido_valores col-md-4">
+          <p class="text-primary m-0">{{ item.value.valor | number: '1.0-0' }}</p>
+          <span class="text-uppercase">{{ item.value.unidad_medida }}</span>
+        </div>
+        <div class="lista_contenido_mas col-md-2">
+          <div class="rounded-circle bg-secondary" type="button">
+            <span class="align-middle text-white">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="collapse_{{i}}" class="collapse bg-light p-4 lista_contenido_colapsable" aria-labelledby="headingOne"
+        data-parent="#accordionExample">
+        <div class="card-body lista_contenido_collapsable p-0" *ngFor="let itemAux of item.value | keyvalue">
+          <div class="">
+            <h3>Fecha</h3>
+            <p>{{ item.value.fecha | date : 'shortDate' }}</p>
+          </div>
+          <div class="lista_contenido_desplegado">
+            <p>{{ item.value.valor }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
